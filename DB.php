@@ -31,4 +31,12 @@ class DB {
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC); // Store the data
         return $data;                              // and return it.
     }
+
+    public function searchData($name){
+        $query = "SELECT * FROM user_details WHERE username LIKE :name LIMIT 10"; // :name is a placeholder
+        $stmt = $this->con->prepare($query);
+        $stmt->execute(["name" => "%{$name}%"]); // Fill the placholder
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
 }
