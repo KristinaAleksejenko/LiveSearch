@@ -26,7 +26,7 @@
     
     <form action="search.php" method="POST">
         <h1>Live search in MySQL</h1>
-        <input class="search-box" type="text" name="" placeholder="Start typing..." required>
+        <input class="search-box" type="text" name="name" placeholder="Start typing..." required>
     </form>
 
     <h2>Result:</h2>
