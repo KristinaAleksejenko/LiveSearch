@@ -22,21 +22,38 @@ function search(name) {
 
 // ---------------------
 // Display search result
-function viewSearchResult(result) {
-	const table = document.querySelector("#result");
 
-	// Table header
-	table.innerHTML = `
-    <tr>
-        <th>user_id</th>
-        <th>username</th>
-    </tr>`;
+// Table header
+const table = document.querySelector("#result");
+setHeader();
+
+function viewSearchResult(result) {
+	setHeader();
+
+	if (result.length == 0) {
+		table.innerHTML = "";
+		table.innerHTML += "<p style='text-align: center;width: 100%;padding: 1em;'>no result</p>";
+	}
 
 	// Iterate through the objects and append them to the table.
+	showResult(result);
+}
+
+function setHeader() {
+	table.innerHTML = `
+		<tr>
+			<th>user_id</th>
+			<th>username</th>
+			<th>password</th>
+		</tr>`;
+}
+
+function showResult(result) {
 	result.forEach((item) => {
 		let data = `<tr>
-            <td>${item.user_id}</td>
-            <td>${item.username}</td>
+			<td>${item.user_id}</td>
+			<td>${item.username}</td>
+			<td>${item.password}</td>
         </tr>`;
 
 		table.innerHTML += data;
