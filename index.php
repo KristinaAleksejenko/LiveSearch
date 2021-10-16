@@ -24,7 +24,7 @@
 </style>
 <body>
     
-    <form action="search.php" method="POST">
+    <form id="search-form" action="search.php" method="POST" autocomplete="off">
         <h1>Live search in MySQL</h1>
         <input class="search-box" type="text" name="name" placeholder="Start typing..." autofocus required>
     </form>
