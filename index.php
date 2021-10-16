@@ -26,24 +26,11 @@
     
     <form action="search.php" method="POST">
         <h1>Live search in MySQL</h1>
-        <input class="search-box" type="text" name="name" placeholder="Start typing..." required>
+        <input class="search-box" type="text" name="name" placeholder="Start typing..." autofocus required>
     </form>
 
     <h2>Result:</h2>
-    <table>
-        <tr>
-            <th>user_id</th>
-            <th>username</th>
-        </tr>
-        <?php
-            foreach ($data as $line) {
-                echo "<tr>";
-                echo "<td>{$line["user_id"]}</td>";
-                echo "<td>{$line["username"]}</td>";
-                echo "</tr>";
-            }
-        ?>
-    </table>
+    <table id="result"></table>
 
     <script src="main.js"></script>
 </body>
