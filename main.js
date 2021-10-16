@@ -1,6 +1,12 @@
 const input = document.querySelector(".search-box");
+const searchForm = document.querySelector("#search-form");
 
 input.addEventListener("input", (e) => search(e.target.value));
+
+// Prevent submission of the form
+searchForm.addEventListener("submit", (e) => {
+	e.preventDefault();
+});
 
 function search(name) {
 	// Send a POST request using the Fetch API where
@@ -18,9 +24,9 @@ function search(name) {
 // Display search result
 function viewSearchResult(result) {
 	const table = document.querySelector("#result");
-	
-    // Table header
-    table.innerHTML = `
+
+	// Table header
+	table.innerHTML = `
     <tr>
         <th>user_id</th>
         <th>username</th>
