@@ -31,8 +31,7 @@ function viewSearchResult(result) {
 	setHeader();
 
 	if (result.length == 0) {
-		table.innerHTML = "";
-		table.innerHTML += "<p style='text-align: center;width: 100%;padding: 1em;'>no result</p>";
+		noResult();
 	}
 
 	// Iterate through the objects and append them to the table.
@@ -58,4 +57,9 @@ function showResult(result) {
 
 		table.innerHTML += data;
 	});
+}
+
+function noResult() {
+	table.innerHTML = "";
+	table.innerHTML += "<p style='text-align: center;width: 100%;padding: 1em;'>no result</p>";
 }
