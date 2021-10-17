@@ -23,15 +23,6 @@ class DB {
         } 
     }
 
-    // Method to fetch data from the database
-    public function viewData(){
-        $query = "SELECT * from user_details LIMIT 10";
-        $stmt = $this->con->prepare($query);  // Prepare query
-        $stmt->execute();  // Execute query
-        $data = $stmt->fetchAll(PDO::FETCH_ASSOC); // Store the data
-        return $data;                              // and return it.
-    }
-
     public function searchData($name){
         $query = "SELECT * FROM user_details WHERE username LIKE :name LIMIT 20"; // :name is a placeholder
         $stmt = $this->con->prepare($query);
