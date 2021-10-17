@@ -1,10 +1,3 @@
-<?php
-    require_once 'DB.php';
-
-    $db = new DB();
-    $data = $db->viewData();
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
